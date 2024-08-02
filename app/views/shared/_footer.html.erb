@@ -1,0 +1,45 @@
+<%# 下部広告部分 %>
+<div class='ad-footer-contents'>
+  <div class='ad-footer-left'>
+    <h2 class='ad-footer-title'>
+      看護師お助けアプリ
+    </h2>
+    <h2 class='ad-footer-title'>
+      今すぐ無料ダウンロード！
+    </h2>
+  </div>
+  <div class='ad-footer-right'>
+    <div class='footer-image-wrapper'>
+      <%= link_to image_tag("top-footer.png", class: 'footer-image'), "#" %>
+    </div>
+    <div class='store-btn'>
+      <%= link_to image_tag("app-store.svg", class: "apple-btn"), "#" %>
+      <%= link_to image_tag("google-play.png", class: "google-btn"), "#" %>
+    </div>
+  </div>
+</div>
+<%# /下部広告部分 %>
+<div class='footer'>
+  <div class='footer-contents'>
+    <div class='furima-details'>
+      <h2 class='footer-content-head'>KANPEについて</h2>
+      <ul>
+        <li><%= link_to '会社概要（運営会社)', "#", class: "footer-link" %></li>
+        <li><%= link_to 'プライバシーポリシー', "#", class: "footer-link" %></li>
+        <li><%= link_to 'KANPE利用規約', "#", class: "footer-link" %></li>
+        <li><%= link_to 'ポイントに関する特約', "#", class: "footer-link" %></li>
+      </ul>
+    </div>
+   
+    <div class='furima-details'>
+      <h2 class='footer-content-head'>KANPEについて</h2>
+      <ul>
+        <li><%= link_to 'KANPEガイド', "#", class: "footer-link" %></li>
+        <li><%= link_to 'KANPEロゴ利用ガイドライン', "#", class: "footer-link" %></li>
+        <li><%= link_to 'お知らせ', "#", class: "footer-link" %></li>
+      </ul>
+    </div>
+  </div>
+  <%= link_to image_tag("kanpe-logo.png", class:"logo-white"), "#" %>
+  <p>© KANPE</p>
+</div>

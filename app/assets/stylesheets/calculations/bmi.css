@@ -1,0 +1,76 @@
+
+.bmi-info h1{
+  font-size: 60px;
+  text-align: center;
+}
+
+
+.bmi-info h2{
+  font-size:50px;
+  text-align: center;
+}
+
+.bmi-info h3{
+  font-size:40px;
+  text-align: center;
+}
+
+.bmi-info{
+  font-size:20px;
+  margin:40px;
+}
+
+.p{
+  text-align: left;
+}
+
+.measures{
+  text-align: center;
+}
+
+.height{
+  margin-bottom: 20px;
+}
+
+.weight{
+  margin-bottom: 20px;
+}
+
+.calculate-btn {
+  width: auto;
+  border-radius: 10px;
+  padding:5px;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  line-height: 48px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.bmi-result-container {
+  text-align: center; /* テキストを中央揃え */
+  margin: 20px 0; /* 上下にマージンを追加 */
+}
+
+#bmi-result {
+  display: inline-block; /* インラインブロック表示に設定 */
+  padding: 10px 20px; /* 内側のパディングを追加 */
+  border: 2px solid #000; /* 黒いボーダーで囲む */
+  border-radius: 5px; /* ボーダーを少し丸くする */
+  background-color: #f9f9f9; /* 背景色（オプション） */
+  font-weight: bold; /* フォントを太字にする */
+}
+
+.bmi-image{
+  display: flex; /* フレクスボックスで配置 */
+  justify-content: center; /* 中央揃え */
+  gap: 10px; /* 画像間のスペース */
+  margin-top: 20px; /* 上にマージンを追加 */
+}
+
+.bmi-pict {
+  margin-bottom: 20px;
+  width: 20%;
+}

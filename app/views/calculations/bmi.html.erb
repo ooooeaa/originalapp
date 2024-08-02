@@ -1,0 +1,73 @@
+<%= render "shared/second-header"%>
+
+  <body>
+    <div class="bmi-info">
+     <h1>BMI計算ページ</h1>
+    <h2>BMIとは</h2>
+    <p>BMI（Body Mass Index）は、体重と身長から肥満度を評価するための指数です。<br>体重 (kg) を身長 (m) の2乗で割ることで計算されます。</p><br>
+    <div class="measures">
+    <h3>BMIの判定基準</h3>
+    <ul>
+      <li>18.5未満: 低体重</li>
+      <li>18.5以上25未満: 普通体重</li>
+      <li>25以上30未満: 肥満 (1度)</li>
+      <li>30以上35未満: 肥満 (2度)</li>
+      <li>35以上40未満: 肥満 (3度)</li>
+      <li>40以上: 肥満 (4度)</li>
+    </ul><br>
+    <div>
+  </div>
+  
+   <form id="bmiForm">
+    <div class="height">
+      <label for="height">身長 (cm):</label>
+      <input type="text" id="height" name="height" required>
+    </div>
+    <div class="weight">
+      <label for="weight">体重 (kg):</label>
+      <input type="text" id="weight" name="weight" required>
+    </div>
+    <div>
+      <button class="calculate-btn" type="button" onclick="calculateBMI()">計算する</button>
+    </div>
+  </form>
+
+  <div class="bmi-result">
+    <p>BMIは <span id="bmi-result">結果</span> です。</p>
+  </div>
+
+  <div class="bmi-image">
+    <%= image_tag "bmi01.png", class:"bmi-pict" %>
+    <%= image_tag "bmi02.png", class:"bmi-pict" %>
+
+  </div>
+
+  
+
+  <script>
+    function calculateBMI() {
+      // フォームから身長と体重を取得
+      const heightInput = document.getElementById('height');
+      const weightInput = document.getElementById('weight');
+      const height = parseFloat(heightInput.value);
+      const weight = parseFloat(weightInput.value);
+      
+      // 結果表示エリア
+      const resultSpan = document.getElementById('bmi-result');
+      
+      // 入力の検証
+      if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+        resultSpan.innerHTML = "<span class='error-message'>正しい身長と体重を入力してください。</span>";
+        return;
+      }
+
+      // 身長をメートルに変換し、BMIを計算
+      const heightInMeters = height / 100;
+      const bmi = weight / (heightInMeters ** 2);
+      resultSpan.innerHTML = `<b>${bmi.toFixed(2)}</b>`;
+    }
+  </script>
+
+  </body>
+
+<%= render "shared/second-footer"%>

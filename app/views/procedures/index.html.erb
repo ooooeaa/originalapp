@@ -1,0 +1,19 @@
+<h1><%= link_to "#{current_user.hospital_name.name}", new_user_session_path(current_user), class: "user-name" %> </h1>
+<h1><%= link_to "#{current_user.ward.name}", new_user_session_path(current_user), class: "user-name" %> </h1>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>基準・手順</title>
+</head>
+<body>
+  <h1><%= @hospital_name.name %></h1>
+  <h2><%= @ward.name %></h2>
+  <h3>目次</h3>
+  <ul>
+    <% @procedures.each do |procedure| %>
+      <li><%= link_to procedure.title, procedure_path(procedure) %></li>
+    <% end %>
+  </ul>
+</body>
+</html>

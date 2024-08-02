@@ -1,0 +1,75 @@
+<%= render "shared/header" %>
+<div class='main'>
+
+<%# 画面上部の帯部分 %>
+<div class='title-contents'>
+  <div class='title-letters'>
+    <h2 class='service-title01'>KANPE</h2>
+    <h2 class='service-title02'>カンペ</h2>
+    <p class='service-explain'>看護師の仕事効率をあげる便利ツールです★</p>
+  </div>
+  <div class='title-image'>
+    <p class='main-image'>
+      <%= link_to image_tag("top-header01.png") %>
+    </p>
+    <div class='store-btn'>
+      <%= link_to image_tag("app-store.svg", class: "apple-btn"), "#" %>
+      <%= link_to image_tag("google-play.png", class: "google-btn"), "#" %>
+    </div>
+  </div>
+</div>
+<%# /画面上部の帯部分 %>
+
+  <%# 3つの理由部分 %>
+
+  <div class='select-reason-contents'>
+    <h2 class='title'>
+      KANPE(カンペ)でできること
+    </h2>
+    <ul class='reason-lists'>
+      <li class='list'>
+        <%= image_tag "top-intro01.png", class:"list-pict" %>
+        <span class='reason-list-number'>1</span>
+        <h3 class='reason-list-text'>
+          <span class='reason-list-blue-text'>基準手順</span>
+          を仲間と共有
+        </h3>
+        <p class='reason-list-description'>
+          周知伝達の時間短縮！
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "top-intro02.png", class:"list-pict" %>
+        <span class='reason-list-number'>2</span>
+        <h3 class='reason-list-text'>
+          <span class='reason-list-blue-text'>ラクラク計算ツール</span>
+          ですぐに計算
+        </h3>
+        <p class='reason-list-description'>
+          滴下計算もガンマ計算もこれですぐ算出！
+        </p><br>
+        <p><%= link_to 'GO!', calculations_path, class: "go-page" %> </p>
+      </li>
+
+      <li class='list'>
+        <%= image_tag "top-intro03.png", class:"list-pict" %>
+        <span class='reason-list-number'>3</span>
+        <h3 class='reason-list-text'>
+          <span class='reason-list-blue-text'>病棟のお知らせ共有</span>
+        </h3>
+        <p class='reason-list-description'>
+          もう連絡ノートの取り合いは無くなるはず！
+        </p>
+   
+      </li>
+    </ul>
+  </div>
+  <%# /FURIMAが選ばれる3つの理由部分 %>
+
+
+</div>
+<%= link_to(new_user_registration_path, class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>新規登録する</span>
+  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<% end %>
+<%= render "shared/footer" %>

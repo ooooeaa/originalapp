@@ -1,0 +1,95 @@
+/* 下部広告部分 */
+/* items/index.htmlの広告cssを所々使いまわしています。 */
+
+.ad-footer-contents {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5vh 15vw;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: black;
+  text-shadow: none;
+}
+
+.ad-footer-left {
+  width: 50%;
+}
+
+.ad-footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-image-wrapper {
+  margin-bottom: 20px;
+}
+
+.footer-image {
+  width: 100%; /* 必要に応じて適切なサイズに調整 */
+  max-width: 400px; /* 最大幅を設定して大きくなりすぎないようにする */
+  height: auto;
+}
+
+.store-btn {
+  display: flex;
+  gap: 10px; /* ボタン間のスペースを調整 */
+}
+
+.apple-btn, .google-btn {
+  width: 150px; /* ボタンの幅を調整 */
+  height: 50px;
+}
+
+.ad-footer-title {
+  font-size: 4vh;
+  margin-bottom: 2vh;
+}
+
+.ad-footer-explain {
+  font-size: 3vh;
+  line-height: 30px;
+}
+
+/* //下部広告部分 */
+
+.footer {
+  width: 100vw;
+  padding: 5vh 0;
+  color: #FFF;
+  background-color: #272727;
+  text-align: center;
+}
+
+.footer-contents {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.furima-details {
+  margin: 0 4vw;
+}
+
+.footer-content-head {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-link {
+  color: #FFF;
+  font-size: 12px;
+  line-height: 30px;
+}
+
+.logo-white {
+  width: 20vh;
+  vertical-align: bottom;
+}
+
+.footer>p {
+  font-size: 14px;
+}
