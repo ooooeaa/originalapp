@@ -51,13 +51,13 @@
 
 .bmi-result-container {
   text-align: center; /* テキストを中央揃え */
-  margin: 20px 0; /* 上下にマージンを追加 */
+  margin: 5px 0; /* 上下にマージンを追加 */
 }
 
 #bmi-result {
   display: inline-block; /* インラインブロック表示に設定 */
   padding: 10px 20px; /* 内側のパディングを追加 */
-  border: 2px solid #000; /* 黒いボーダーで囲む */
+  border: 1px solid #000; /* 黒いボーダーで囲む */
   border-radius: 5px; /* ボーダーを少し丸くする */
   background-color: #f9f9f9; /* 背景色（オプション） */
   font-weight: bold; /* フォントを太字にする */
