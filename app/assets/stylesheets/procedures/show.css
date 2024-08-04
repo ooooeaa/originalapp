@@ -26,8 +26,8 @@
 }
 
 .item-box-img {
-  height: 50vh;
-  width: 60vw;
+  height: auto;
+  width: 20%;
   min-height: 500px;
   background-color: rgb(205, 202, 202);
   object-fit: contain;
@@ -120,24 +120,6 @@
 .favorite-star-icon {
   margin-right: 5px;
 }
-
-.report-btn {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
-
-  padding: 1vh 0;
-  color: black;
-  border: 2px solid #2d2d2d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.report-flag-icon {
-  margin-right: 5px;
-}
-
 
 /* /商品の概要 */
 

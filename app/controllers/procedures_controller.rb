@@ -1,10 +1,10 @@
 class ProceduresController < ApplicationController
-  before_action :set_procedure, only: [:destroy, :show, :edit, :update]
+  before_action :set_procedure, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :redirect_if_not_authorized, :redirect_if_sold_out, only: [:edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
+    @procedures = Procedure.order(created_at: :desc)
     if current_user
       @hospital_name = current_user.hospital_name
       @ward = current_user.ward
@@ -15,7 +15,6 @@ class ProceduresController < ApplicationController
   end
 
   def show
-    @procedure = Procedure.find(params[:id])
     @user = @procedure.user
   end
 
@@ -33,12 +32,19 @@ class ProceduresController < ApplicationController
   end
 
   def destroy
+    @procedure.destroy
+    redirect_to root_path, notice: '手続きが削除されました。'
   end
 
   def edit
   end
 
   def update
+    if @procedure.update(procedure_params)
+      redirect_to @procedure, notice: '手続きが正常に更新されました。'
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private
