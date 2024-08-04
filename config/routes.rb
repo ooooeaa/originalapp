@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     get 'drop'
   end
 end
+resources :procedures
 end
