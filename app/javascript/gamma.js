@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("target_dose").innerText = targetDose.toFixed(2);
   }
 
-  document.querySelector("form").addEventListener("submit", function(event) {
+  document.querySelector(".calculate-btn").addEventListener("click", function(event) {
     event.preventDefault();
     calculateTargetDose();
   });
