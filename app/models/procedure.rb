@@ -9,10 +9,4 @@ class Procedure < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
   validates :category_id, presence: true, numericality: { other_than: 1, message: "can't be blank" }
-
-  private
-
-  def message_params
-    params.require(:procedure).permit(:image, :title, :text).merge(user_id: current_user.id)
-  end
 end

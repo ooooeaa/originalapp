@@ -1,5 +1,5 @@
 class ProceduresController < ApplicationController
-  before_action :set_item, only: [:destroy, :show, :edit, :update]
+  before_action :set_procedure, only: [:destroy, :show, :edit, :update]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :redirect_if_not_authorized, :redirect_if_sold_out, only: [:edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index]
@@ -15,6 +15,8 @@ class ProceduresController < ApplicationController
   end
 
   def show
+    @procedure = Procedure.find(params[:id])
+    @user = @procedure.user
   end
 
   def new
@@ -39,11 +41,13 @@ class ProceduresController < ApplicationController
   def update
   end
 
+  private
+
   def set_procedure
     @procedure = Procedure.find(params[:id])
   end
 
-  def item_params
-    params.require(:item).permit(:title, :material, :text, :category_id, :image).merge(user_id: current_user.id)
+  def procedure_params
+    params.require(:procedure).permit(:title, :material, :text, :category_id, :image).merge(user_id: current_user.id)
   end
 end

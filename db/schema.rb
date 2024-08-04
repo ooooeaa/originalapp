@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_04_191421) do
 
   create_table "procedures", charset: "utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.text "material", null: false
+    t.text "material"
     t.text "text", null: false
     t.integer "category_id", null: false
     t.bigint "user_id", null: false
