@@ -1,7 +1,7 @@
 
 <%= render "shared/second-header"%>
 
-<div class="bmi-info">
+<div class="caluculation-info">
   <h1>ガンマ計算ページ</h1>
   <h2>ガンマ計算とは</h2>
   <p>ガンマと言うのは投与量の単位です。体重1(kg)当たり1分当たりの薬剤量μgです。<br>また、ある一定の目標用量（γ）を得るために、必要な流速は以下のように求めることができます。<br>
@@ -14,7 +14,9 @@
       <li>>10(μg/kg/min): α(+β+DA1)：体・肺血管抵抗増大、腎血流減少、心拍数増加、催不整脈作用、高負荷増大で心拍出量は減少</li>
     </ul><br>
   </div>
-  <form id="gammaForm">
+  </div>
+
+  <form id="calculationForm">
     <div class="form-group">
       <label for="weight">体重 (kg):</label>
       <input type="number" id="weight" name="weight" step="0.1" required>
@@ -35,15 +37,15 @@
       <button class="calculate-btn" type="button">計算する</button>
     </div>
   </form>
-  <h2>目標用量 (γ)は 
+  <div class="calculation-result">目標用量 (γ)は 
     <div id="target_dose_box">
       <span id="target_dose"></span>
     </div>
     μg/kg/minです。
-  </h2>
+  </div>
 
-  <div class="drop-image">
-    <%= image_tag "drop01.png", class:"drop-pict" %>
+  <div class="calculation-image">
+    <%= image_tag "drop01.png", class:"calculation-pict" %>
   </div>
 
   <%= render "shared/second-footer"%>

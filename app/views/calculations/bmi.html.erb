@@ -1,7 +1,7 @@
 <%= render "shared/second-header"%>
 
-  <div class="bmi-info">
-     <h1>BMI計算ページ</h1>
+<div class="caluculation-info">
+    <h1>BMI計算ページ</h1>
     <h2>BMIとは</h2>
     <p>BMI（Body Mass Index）は、体重と身長から肥満度を評価するための指数です。<br>体重 (kg) を身長 (m) の2乗で割ることで計算されます。</p><br>
     <div class="measures">
@@ -17,7 +17,7 @@
     <div>
   </div>
   
-   <form id="bmiForm">
+   <form id="calculationForm">
     <div class="height">
       <label for="height">身長 (cm):</label>
       <input type="text" id="height" name="height" required>
@@ -31,14 +31,13 @@
     </div>
   </form>
 
-  <div class="bmi-result">
+  <div class="calculation-result">
     <p>BMIは <span id="bmi-result">結果</span> です。</p>
   </div>
 
-  <div class="bmi-image">
-    <%= image_tag "bmi01.png", class:"bmi-pict" %>
-    <%= image_tag "bmi02.png", class:"bmi-pict" %>
-
+  <div class="calculation-image">
+    <%= image_tag "bmi01.png", class:"calculation-pict" %>
+    <%= image_tag "bmi02.png", class:"calculation-pict" %>
   </div>
 
 
