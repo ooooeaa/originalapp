@@ -1,11 +1,10 @@
+<%= render "shared/second-header" %>
 
-<%= render "shared/second-header"%>
-
-<div class="caluculation-info">
+<div class="calculation-info">
   <h1>ガンマ計算ページ</h1>
   <h2>ガンマ計算とは</h2>
   <p>ガンマと言うのは投与量の単位です。体重1(kg)当たり1分当たりの薬剤量μgです。<br>また、ある一定の目標用量（γ）を得るために、必要な流速は以下のように求めることができます。<br>
-    流量 = 6 × γ × 体重 / (100× 薬物量/溶液量)。</p><br>
+    流量 = 6 × γ × 体重 / (100× 薬物量 / 溶液量)。</p><br>
   <div class="measures">
     <h3>例：ドパミンの心・血管への作用</h3>
     <ul>
@@ -14,38 +13,41 @@
       <li>>10(μg/kg/min): α(+β+DA1)：体・肺血管抵抗増大、腎血流減少、心拍数増加、催不整脈作用、高負荷増大で心拍出量は減少</li>
     </ul><br>
   </div>
-  </div>
+</div>
 
-  <form id="calculationForm">
-    <div class="form-group">
-      <label for="weight">体重 (kg):</label>
-      <input type="number" id="weight" name="weight" step="0.1" required>
-    </div>
-    <div class="form-group">
-      <label for="drug_amount">薬物量 (mg):</label>
-      <input type="number" id="drug_amount" name="drug_amount" step="0.1" required>
-    </div>
-    <div class="form-group">
-      <label for="solution_volume">溶液量 (ml):</label>
-      <input type="number" id="solution_volume" name="solution_volume" step="0.1" required>
-    </div>
-    <div class="form-group">
-      <label for="flow_rate">流量 (ml/時間):</label>
-      <input type="number" id="flow_rate" name="flow_rate" step="0.1" required>
-    </div>
-    <div class="form-group">
-      <button class="calculate-btn" type="button">計算する</button>
-    </div>
-  </form>
-  <div class="calculation-result">目標用量 (γ)は 
-    <div id="target_dose_box">
-      <span id="target_dose"></span>
-    </div>
-    μg/kg/minです。
+<form id="calculationForm">
+  <div class="form-group">
+    <label for="weight">体重 (kg):</label>
+    <input type="number" id="weight" name="weight" step="0.1" required>
   </div>
-
-  <div class="calculation-image">
-    <%= image_tag "drop01.png", class:"calculation-pict" %>
+  <div class="form-group">
+    <label for="drug_amount">薬物量 (mg):</label>
+    <input type="number" id="drug_amount" name="drug_amount" step="0.1" required>
   </div>
+  <div class="form-group">
+    <label for="solution_volume">溶液量 (ml):</label>
+    <input type="number" id="solution_volume" name="solution_volume" step="0.1" required>
+  </div>
+  <div class="form-group">
+    <label for="flow_rate">流量 (ml/時間):</label>
+    <input type="number" id="flow_rate" name="flow_rate" step="0.1" required>
+  </div>
+  <div class="form-group">
+    <button class="calculate-btn" type="button" onclick="calculateGamma()">計算する</button>
+  </div>
+</form>
 
-  <%= render "shared/second-footer"%>
+<div class="calculation-result">
+  目標用量 (γ)は 
+  <div id="target_dose_box" class="bmi-result">
+    <span id="target_dose">結果</span>
+  </div>
+  μg/kg/minです。
+</div>
+
+
+<div class="calculation-image">
+  <%= image_tag "drop01.png", class: "calculation-pict" %>
+</div>
+
+<%= render "shared/second-footer" %>

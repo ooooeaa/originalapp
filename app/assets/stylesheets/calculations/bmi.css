@@ -1,83 +1,113 @@
-
-.calculation-info h1{
+.calculation-info h1 {
   font-size: 60px;
   text-align: center;
 }
 
-.calculation-info h2{
-  font-size:50px;
+.calculation-info h2 {
+  font-size: 50px;
   text-align: center;
 }
 
-.calculation-info h3{
-  font-size:40px;
+.calculation-info h3 {
+  font-size: 40px;
   text-align: center;
 }
 
-.calculation-info{
-  font-size:20px;
-  margin:40px;
+.calculation-info {
+  font-size: 20px;
+  margin: 40px;
 }
 
-.p{
+.p {
   text-align: left;
 }
 
 .measures {
-  display: inline-block;
-  text-align: left; /* リストアイテムを左揃えにする */
-  margin: 0 auto; /* コンテナを中央揃えにする */
+  text-align: center; 
 }
 
 .measures ul {
-  list-style-type: none;
+  display: inline-block; 
+  text-align: left; 
   padding: 0;
-  margin: 0;
+  margin: 15px;
 }
 
 .measures li {
-  margin-bottom: 10px; /* リストアイテムの間隔 */
-}
-.height{
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-.weight{
-  margin-bottom: 20px;
+
+#calculationForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 400px; 
+  
 }
+
+.height,
+.weight {
+  width: 100%; 
+  text-align: left; 
+  margin-bottom: 10px;
+}
+
+.calculate-btn {
+  margin-top: 40px;
+}
+
+.calculation-result {
+  text-align: center; /* テキストを中央揃え */
+  margin: 5px 0; /* 上下にマージンを追加 */
+  font-size: 40px;
+}
+
 
 .calculate-btn {
   width: auto;
   border-radius: 10px;
-  padding:5px;
+  padding: 5px;
   background: #ea352d;
   border: 1px solid #ea352d;
   color: #fff;
   line-height: 48px;
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
   margin-bottom: 20px;
 }
 
 .calculation-result-container {
-  text-align: center; /* テキストを中央揃え */
-  margin: 5px 0; /* 上下にマージンを追加 */
+  text-align: center;
+  margin: 5px 0;
+  font-size: 30px;
 }
 
 #calculation-result {
-  display: inline-block; /* インラインブロック表示に設定 */
-  padding: 10px 20px; /* 内側のパディングを追加 */
-  border: 1px solid #000; /* 黒いボーダーで囲む */
-  border-radius: 5px; /* ボーダーを少し丸くする */
-  background-color: #f9f9f9; /* 背景色（オプション） */
-  font-weight: bold; /* フォントを太字にする */
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
 }
 
-.calculation-image{
-  display: flex; /* フレクスボックスで配置 */
-  justify-content: center; /* 中央揃え */
-  gap: 10px; /* 画像間のスペース */
-  margin-top: 20px; /* 上にマージンを追加 */
+.bmi-result {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+}
+
+.calculation-image {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
 }
 
 .calculation-pict {
