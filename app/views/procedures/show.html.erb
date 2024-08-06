@@ -10,19 +10,6 @@
       <%= image_tag @procedure.image, class: "item-img" %>
     </div>
     
-
-    <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
-
-   <% if user_signed_in? %>
-     <% if current_user == @procedure.user %>
-         <%= link_to "商品の編集", edit_procedure_path(@procedure), method: :get, class: "item-red-btn" %>
-        <p class="or-text">or</p>
-         <%= link_to "削除", procedure_path(@procedure), data: { turbo_method: :delete }, class: "procedure-destroy" %>
-    <% else %>
-         <%=link_to 'もどる', root_path,  class: "procedure-destroy" %>
-    <% end %>
-  <% end %>
-
     <table class="detail-table">
       <tbody>
         <tr>
@@ -31,7 +18,7 @@
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
-          <td class="detail-value"><%= @procedure.category.name%></td>
+          <td class="detail-value"><%= @procedure.category.name %></td>
         </tr>
         <tr>
           <th class="detail-item">必要物品</th>
@@ -45,38 +32,59 @@
     </table>
     <div class="option">
       <div class="favorite-btn">
-        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+        <%= image_tag "star.png", class: "favorite-star-icon", width: "20", height: "20" %>
         <span>読みました 0</span>
       </div>
     </div>
   </div>
   <%# /商品の概要 %>
 
+  <% if user_signed_in? %>
+    <% if current_user == @procedure.user %>
+      <%= link_to "編集", edit_procedure_path(@procedure), method: :get, class: "item-red-btn" %>
+      <p class="or-text">or</p>
+      <%= link_to "削除", procedure_path(@procedure), data: { turbo_method: :delete }, class: "item-red-btn" %>
+    <% else %>
+      <%= link_to 'もどる', root_path, class: "procedure-destroy" %>
+    <% end %>
+  <% end %>
 
   <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
-      <p class="comment-warn">
-        相手のことを考え丁寧なコメントを心がけましょう。
-        <br>
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-    </form>
+    <% if user_signed_in? %>
+      <%= form_with(model: [@procedure, @comment], local: true) do |f| %>
+  <%= f.text_area :comment, placeholder: "コメントする", rows: "2", class: "comment-text" %>
+  <p class="comment-warn">
+    相手のことを考え丁寧なコメントを心がけましょう。
+    <br>
+    不快な言葉遣いなどは利用制限や退会処分となることがあります。
+  </p>
+  <button type="submit" class="comment-btn">
+    <%= image_tag "comment.png", class: "comment-flag-icon", width: "20", height: "25" %>
+    <span>コメントする</span>
+  </button>
+<% end %>
+
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+    <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% @comments.each do |comment| %>
+       <p>
+  <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
+  <%= comment.comment %>
+</p>
+      <% end %>
+    </div>
   </div>
+  
   <div class="links">
-    <a href="#" class="change-item-btn">
-      ＜ 前の商品
-    </a>
-    <a href="#" class="change-item-btn">
-      後ろの商品 ＞
-    </a>
+    <a href="#" class="change-item-btn">＜ 前の商品</a>
+    <a href="#" class="change-item-btn">後ろの商品 ＞</a>
   </div>
+  
   <%# 詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
-  <a href="#" class="another-item"><%= "商品のカテゴリー名" %>をもっと見る</a>
+  <a href="#" class="another-item"><%= @procedure.category.name %>をもっと見る</a>
   <%# //詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
 </div>
 

@@ -16,6 +16,8 @@ class ProceduresController < ApplicationController
 
   def show
     @user = @procedure.user
+    @comment = Comment.new
+    @comments = @procedure.comments.includes(:user)
   end
 
   def new
