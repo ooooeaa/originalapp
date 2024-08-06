@@ -7,10 +7,11 @@
   <h3>新着</h3>
   <ul>
   <% @notices.each do |notice| %>
-    <li><%= notice.title %></li>
-  <% end %>
+      <li><%= link_to notice.title, notice_path(notice) %></li>
+    <% end %>
 </ul>
 
   <p><%= link_to '登録する', new_notice_path, class: "go-page" %> </p>
+  <p><%= link_to 'トップページに戻る', root_path, class: "go-page" %> </p>
 </body>
 </html>
