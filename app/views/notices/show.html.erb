@@ -1,0 +1,58 @@
+<%= render "shared/header" %>
+
+<%# 商品の概要 %>
+<div class="item-show">
+  <div class="item-box">
+    <h2 class="name">
+      <%= @notice.title %>
+    </h2>
+    <div class="item-img-content">
+  <% if @notice.image.present? %>
+    <%= image_tag @notice.image, class: "item-img" %>
+  <% end %>
+</div>
+
+    
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">登録日時</th>
+          <td class="detail-value"><%= @notice.created_at.strftime('%Y年%m月%d日 %H:%M') %></td>
+        </tr><tr>
+          <th class="detail-item">記載者</th>
+          <td class="detail-value"><%= @user.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">お知らせ内容</th>
+          <td class="detail-value"><%= @notice.text %></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="option">
+      <div class="favorite-btn">
+        <%= image_tag "star.png", class: "favorite-star-icon", width: "20", height: "20" %>
+        <span>読みました 0</span>
+      </div>
+    </div>
+  </div>
+  <%# /商品の概要 %>
+
+  <% if user_signed_in? %>
+    <% if current_user == @notice.user %>
+      <%= link_to "編集", edit_notice_path(@notice), method: :get, class: "item-red-btn" %>
+      <p class="or-text">or</p>
+      <%= link_to "削除", notice_path(@notice), data: { turbo_method: :delete }, class: "item-red-btn" %>
+    <% else %>
+      <%= link_to 'もどる', root_path, class: "procedure-destroy" %>
+    <% end %>
+  <% end %>
+
+    </div>
+  </div>
+  
+  <%# 詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
+  <a href="#" class="another-item">お知らせをもっと見る</a>
+  <%# //詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
+</div>
+
+<%= render "shared/footer" %>

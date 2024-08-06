@@ -1,0 +1,16 @@
+<h1><%= link_to "#{current_user.hospital_name.name}", new_user_session_path(current_user), class: "user-name" %> </h1>
+<h1><%= link_to "#{current_user.ward.name}", new_user_session_path(current_user), class: "user-name" %> </h1>
+
+<body>
+  <h1>お知らせ</h1>
+  <h2><%= @hospital_name.name %><br><%= @ward.name %></h2>
+  <h3>新着</h3>
+  <ul>
+  <% @notices.each do |notice| %>
+    <li><%= notice.title %></li>
+  <% end %>
+</ul>
+
+  <p><%= link_to '登録する', new_notice_path, class: "go-page" %> </p>
+</body>
+</html>

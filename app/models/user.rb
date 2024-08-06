@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :procedures
   has_many :comments
+  has_many :notices
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
   validates :name, presence: true
