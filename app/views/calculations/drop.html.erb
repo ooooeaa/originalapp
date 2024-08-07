@@ -1,7 +1,48 @@
-<%= render "shared/second-header"%>
-<div class="drop-info">
-  <h2>ドロップ計算</h2>
-  <p>ドロップ計算とは、物理的なドロップの計算方法です。</p>
-  <!-- ここにドロップ計算フォームなどを追加 -->
+<%= render "shared/second-header" %>
+
+<div class="calculation-info">
+  <h1>点滴の滴下計算</h1>
+  <h2>滴下計算式</h2>
+  <p>滴下計算は「輸液の量（ｍL）」と「輸液時間（分）」、そして「1ｍLあたりの滴下数（成人用輸液セットは20、小児用輸液セットは60）」を入力するだけで、1分あたりの滴下数がわかります。<br>
+1ｍLあたりの滴下数は、成人用輸液セットで20滴、小児用輸液セットで60滴で、この2種類しかありません。</p><br>
+  <div class="measures">
+    <h3></h3>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul><br>
+  </div>
 </div>
-<%= render "shared/second-footer"%>
+
+<h1>輸液計算</h1>
+  <div class="form-group">
+    <label for="infusion_volume">輸液量 (ml):</label>
+    <input type="number" id="infusion_volume" name="infusion_volume" required>
+  </div>
+  <div class="form-group">
+    <label for="infusion_time">投与時間 (分):</label>
+    <input type="number" id="infusion_time" name="infusion_time" required>
+  </div>
+  <div class="form-group">
+    <label for="set_type">セットの種類:</label>
+    <select id="set_type" name="set_type" required>
+      <option value="20">成人用 (20滴/ml)</option>
+      <option value="60">小児用 (60滴/ml)</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <button class="calculate-btn" type="button" onclick="calculateInfusionRate()">計算する</button>
+  </div>
+
+  <div class="calculation-result">
+    <p>滴下速度は <span id="infusion_rate_result">--</span> 滴/分です。</p>
+  </div>
+
+  <script src="infusion_calculator.js"></script>
+
+<div class="calculation-image">
+  <%= image_tag "drop01.png", class: "calculation-pict" %>
+</div>
+
+<%= render "shared/second-footer" %>

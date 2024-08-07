@@ -18,8 +18,10 @@
   margin: 40px;
 }
 
-.p {
-  text-align: left;
+.calculation-info p {
+  text-align: left; /* テキストを左寄せ */
+  margin: 0 auto;   /* 親要素内で中央に配置 */
+  max-width: 600px; /* 必要に応じて幅を調整 */
 }
 
 .measures {
@@ -95,7 +97,7 @@
   margin-top: 20px;
 }
 
-.bmi-result {
+.your-result {
   display: inline-block;
   padding: 5px 10px;
   border: 2px solid #000;

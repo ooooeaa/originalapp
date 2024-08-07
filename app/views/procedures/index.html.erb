@@ -1,7 +1,6 @@
 <h1><%= link_to "#{current_user.hospital_name.name}", new_user_session_path(current_user), class: "user-name" %> </h1>
 <h1><%= link_to "#{current_user.ward.name}", new_user_session_path(current_user), class: "user-name" %> </h1>
 
-<body>
   <h1>基準・手順</h1>
   <h2><%= @hospital_name.name %><br><%= @ward.name %></h2>
   <h3>目次</h3>
@@ -12,5 +11,4 @@
   </ul>
 
   <p><%= link_to '登録する', new_procedure_path, class: "go-page" %> </p>
-</body>
-</html>
+  <p><%= link_to 'トップページに戻る', root_path, class: "go-page" %> </p>

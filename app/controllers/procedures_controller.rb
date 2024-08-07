@@ -5,13 +5,10 @@ class ProceduresController < ApplicationController
 
   def index
     @procedures = Procedure.order(created_at: :desc)
-    if current_user
-      @hospital_name = current_user.hospital_name
-      @ward = current_user.ward
-    else
-      @hospital_name = nil
-      @ward = nil
-    end
+    return unless current_user
+
+    @hospital_name = current_user.hospital_name
+    @ward = current_user.ward
   end
 
   def show
