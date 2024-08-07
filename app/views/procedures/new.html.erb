@@ -1,18 +1,15 @@
-<h1><%= link_to "#{current_user.hospital_name.name}", new_user_session_path(current_user), class: "user-name" %> </h1>
-<h1><%= link_to "#{current_user.ward.name}", new_user_session_path(current_user), class: "user-name" %> </h1>
-
 <div class="items-sell-contents">
+    <h1><%= link_to "#{current_user.hospital_name.name}", new_user_session_path(current_user), class: "user-name" %> </h1>
+<h1><%= link_to "#{current_user.ward.name}", new_user_session_path(current_user), class: "user-name" %> </h1>
   <header class="items-sell-header">
     <%= link_to image_tag('kanpe-logo.png' , size: '50x50'), "/" %>
-
   </header>
+
   <div class="items-sell-main">
     <h2 class="items-sell-title">基準・手順を入力</h2>
      <%= form_with model: @procedure, local: true do |f| %>
 
-    <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
     <%= render 'shared/error_messages', model: f.object %>
-    <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
 
    <%# 商品の詳細 %>
       <div class="form">
@@ -22,9 +19,7 @@
         </div>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"procedure_category"}) %>
       </div>
-      </div>
     <%# /商品の詳細 %>
-   
     <%# 商品名と商品説明 %>
     <div class="new-items">
       <div class="weight-bold-text">
@@ -47,7 +42,6 @@
       </div>
     </div>
     <%# /商品名と商品説明 %>
-
      <%# 商品画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
@@ -78,11 +72,12 @@
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
       <%= f.submit "登録する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+      <%=link_to 'もどる', procedures_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>
-  <% end %>
+   <% end %>
+   </div>
 
   <footer class="items-sell-footer">
     <ul class="menu">
@@ -95,4 +90,3 @@
       ©︎KANPE,Inc.
     </p>
   </footer>
-</div>
