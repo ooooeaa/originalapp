@@ -1,3 +1,5 @@
+<%= render "shared/second-header"%>
+
 <h1><%= link_to "#{current_user.hospital_name.name}", new_user_session_path(current_user), class: "user-name" %> </h1>
 <h1><%= link_to "#{current_user.ward.name}", new_user_session_path(current_user), class: "user-name" %> </h1>
 
@@ -12,3 +14,5 @@
 
   <p><%= link_to '登録する', new_notice_path, class: "go-page" %> </p>
   <p><%= link_to 'トップページに戻る', root_path, class: "go-page" %> </p>
+
+  <%= render "shared/second-footer"%>

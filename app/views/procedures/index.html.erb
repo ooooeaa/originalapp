@@ -1,13 +1,7 @@
+<%= render "shared/second-header"%>
 
-<header>
-  <div class="items-sell-contents">
-   <header class="items-sell-header">
-    <%= link_to image_tag('kanpe-logo.png' , size: '50x50'), "/" %>
-  </div>
-</header>
-
-<div class="items-sell-main">
-  <h2 class="items-sell-title">基準・手順</h2>
+<div class="index-container">
+  <h1>基準・手順</h1>
   <h2><%= @hospital_name.name %><br><%= @ward.name %></h2>
   <h3>目次</h3>
   <ul>
@@ -15,19 +9,12 @@
       <li><%= link_to procedure.title, procedure_path(procedure) %></li>
     <% end %>
   </ul>
+</div>
 
+<div class="index-container-btn">
   <p><%= link_to '登録する', new_procedure_path, class: "go-page" %> </p>
   <p><%= link_to 'トップページに戻る', root_path, class: "go-page" %> </p>
 </div>
 
-  <footer class="items-sell-footer">
-    <ul class="menu">
-      <li><a href="#">プライバシーポリシー</a></li>
-      <li><a href="#">カンペ利用規約</a></li>
-      <li><a href="#">特定商取引に関する表記</a></li>
-    </ul>
-    <%= link_to image_tag('kanpe-logo.png' , size: '50x50'), "/" %>
-    <p class="inc">
-      ©︎KANPE,Inc.
-    </p>
-  </footer>
+
+  <%= render "shared/second-footer"%>

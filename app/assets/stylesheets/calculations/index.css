@@ -1,8 +1,14 @@
 .index-container{
-  font-size: 50px;
   text-align: center;
 }
 
+.index-container h1 {
+  font-size: 40px;
+}
+
+.index-container h2 {
+  font-size: 30px;
+}
 .index-container ul {
   list-style-type: none;
 }
@@ -24,6 +30,23 @@
 
 .index-container a:hover {
   background-color: #f0f0f0;
+}
+
+.index-container-btn {
+  display: flex;
+  justify-content: center; /* 中央に配置 */
+  gap: 20px; /* ボタン間の間隔を調整 */
+  margin-top: 20px; /* 必要に応じて上の余白を追加 */
+}
+
+.go-page {
+  text-decoration: none; /* デフォルトのリンクスタイルを削除 */
+  padding: 10px 20px; /* ボタンにパディングを追加 */
+  border: 1px solid #000; /* ボタンの境界線 */
+  border-radius: 5px; /* ボタンの角を丸くする */
+  background-color: #f0f0f0; /* ボタンの背景色 */
+  color: #000; /* ボタンの文字色 */
+  font-weight: bold; /* ボタンの文字を太字にする */
 }
 
 
