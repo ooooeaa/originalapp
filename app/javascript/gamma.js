@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("turbo:load", function() {
   function calculateTargetDose() {
     var weight = parseFloat(document.getElementById("weight").value);
     var drugAmount = parseFloat(document.getElementById("drug_amount").value);

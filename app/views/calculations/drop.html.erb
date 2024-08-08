@@ -5,16 +5,9 @@
   <h2>滴下計算式</h2>
   <p>滴下計算は「輸液の量（ｍL）」と「輸液時間（分）」、そして「1ｍLあたりの滴下数（成人用輸液セットは20、小児用輸液セットは60）」を入力するだけで、1分あたりの滴下数がわかります。<br>
 1ｍLあたりの滴下数は、成人用輸液セットで20滴、小児用輸液セットで60滴で、この2種類しかありません。</p><br>
-  <div class="measures">
-    <h3></h3>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul><br>
-  </div>
 </div>
 
+<form id="calculationForm">
 <h1>輸液計算</h1>
   <div class="form-group">
     <label for="infusion_volume">輸液量 (ml):</label>
@@ -31,9 +24,10 @@
       <option value="60">小児用 (60滴/ml)</option>
     </select>
   </div>
-  <div class="form-group">
+  <div class="cal-btn">
     <button class="calculate-btn" type="button" onclick="calculateInfusionRate()">計算する</button>
   </div>
+  </form>
 
   <div class="calculation-result">
     <p>滴下速度は <span id="infusion_rate_result">--</span> 滴/分です。</p>
