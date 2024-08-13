@@ -1,58 +1,59 @@
-.index-container{
+.c-index-container{
   text-align: center;
 }
 
-.index-container h1 {
+.c-index-container h1 {
   font-size: 40px;
 }
 
-.index-container h2 {
+.c-index-container h2 {
   font-size: 30px;
 }
-.index-container ul {
-  list-style-type: none;
-}
 
-.index-container li {
-  margin: 50px 0;
-  font-size: 20px;
-  padding: 15px 30px;
-  text-align: center;
-  background-color: #fff;
-  border: 2px solid #000;
-  color: #000;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.index-container a {
-  padding: 15px 30px;
-  text-align: center;
-  background-color: #fff;
-  border-radius: 5px;
-}
-
-.index-container a:hover {
-  background-color: #f0f0f0;
-}
-
-
-.index-container-btn {
+.c-index-container ul {
   display: flex;
   flex-direction: column; /* 縦並びに配置 */
   align-items: center; /* ボタンを中央に配置 */
   gap: 20px; /* ボタン間の隙間を調整 */
-  margin-top: 20px;
+  margin: 40px;
+}
+  
+.c-index-container li {
+    margin: 20px 0;
+    font-size: 20px;
+    padding: 15px 30px;
+    background-color: #fff;
+    border: 2px solid #000;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block; /* インラインブロックで中央揃え */
+    width: 30%;
+  }
+  
+  .c-index-container a {
+    color: #000; /* リンクの文字色をピンクにする */
+    text-decoration: none; /* リンクの下線を削除 */
+}
+
+
+.c-index-container-btn {
+  display: flex;
+  flex-direction: column; /* 縦並びに配置 */
+  align-items: center; /* ボタンを中央に配置 */
+  gap: 20px; /* ボタン間の隙間を調整 */
+  margin: 20px;
 }
 
 .c-go-page {
   text-decoration: none; /* デフォルトのリンクスタイルを削除 */
+  font-size: 20px;
   padding: 10px 20px; /* ボタンにパディングを追加 */
-  border: 1px solid #000; /* ボタンの境界線 */
+  border: 1px solid #3ccace; /* ボタンの境界線 */
   border-radius: 5px; /* ボタンの角を丸くする */
   background-color: #3ccace; /* ボタンの背景色 */
   color:#f0f0f0; /* ボタンの文字色 */
   font-weight: bold; /* ボタンの文字を太字にする */
+  margin-bottom: 20px;
 }
 
 

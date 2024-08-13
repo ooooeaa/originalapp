@@ -1,5 +1,5 @@
 <%= render "shared/second-header"%>
-<div class="index-container">
+<div class="c-index-container">
   <h1>計算ツールの目次</h1>
   <ul>
     <li><%= link_to 'BMI計算', bmi_calculations_path %></li>
@@ -8,9 +8,9 @@
   </ul>
 </div>
 
-<div class="index-container-btn">
+<div class="c-index-container-btn">
   <p><%= link_to '登録する', new_procedure_path, class: "c-go-page" %> </p>
-  <p><%= link_to 'トップページに戻る', root_path, class: "c-go-page" %> </p>
+  <p><%= link_to '戻る', root_path, class: "c-go-page" %> </p>
 </div>
 
 <%= render "shared/second-footer"%>
