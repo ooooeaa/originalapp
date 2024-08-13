@@ -1,9 +1,9 @@
 <%= render "shared/second-header"%>
 
-<div class="index-container">
+<div class="p-index-container">
   <h1>基準・手順</h1>
   <h2><%= @hospital_name.name %><br><%= @ward.name %></h2>
-  <h3>目次</h3>
+  <h2>目次</h2>
   <ul>
     <% @procedures.each do |procedure| %>
       <li><%= link_to procedure.title, procedure_path(procedure) %></li>
@@ -11,7 +11,7 @@
   </ul>
 </div>
 
-<div class="index-container-btn">
+<div class="p-index-container-btn">
   <p><%= link_to '登録する', new_procedure_path, class: "p-go-page" %> </p>
   <p><%= link_to 'トップページに戻る', root_path, class: "p-go-page" %> </p>
 </div>

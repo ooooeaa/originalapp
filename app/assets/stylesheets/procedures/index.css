@@ -1,2 +1,63 @@
+.p-index-container{
+  text-align: center;
+}
+
+.p-index-container h1 {
+  font-size: 40px;
+}
+
+.p-index-container h2 {
+  font-size: 30px;
+}
+
+.p-index-container ul {
+  display: flex;
+  flex-direction: column; /* 縦並びに配置 */
+  align-items: center; /* ボタンを中央に配置 */
+  gap: 20px; /* ボタン間の隙間を調整 */
+  margin: 40px;
+}
+  
+.p-index-container li {
+    margin: 20px 0;
+    font-size: 20px;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: block; /* ブロック要素として縦に並べる */
+    width: 30%; /* 横幅を指定 */
+    margin-left: auto; /* 左右のマージンを自動設定 */
+    margin-right: auto;
+    background-color: #fff;
+    border: 2px solid #000;
+  }
+  
+  .p-index-container a {
+    color: #000; /* リンクの文字色をピンクにする */
+    text-decoration: none; /* リンクの下線を削除 */
+}
+
+
+.p-index-container-btn {
+  display: flex;
+  flex-direction: column; /* 縦並びに配置 */
+  align-items: center; /* ボタンを中央に配置 */
+  gap: 20px; /* ボタン間の隙間を調整 */
+  margin: 20px;
+}
+
+.p-go-page {
+  text-decoration: none; /* デフォルトのリンクスタイルを削除 */
+  font-size: 20px;
+  padding: 10px 20px; /* ボタンにパディングを追加 */
+  border: 1px solid #3ccace; /* ボタンの境界線 */
+  border-radius: 5px; /* ボタンの角を丸くする */
+  background-color: #3ccace; /* ボタンの背景色 */
+  color:#f0f0f0; /* ボタンの文字色 */
+  font-weight: bold; /* ボタンの文字を太字にする */
+  margin-bottom: 20px;
+}
+
+
 
 
