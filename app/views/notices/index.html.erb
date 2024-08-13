@@ -6,7 +6,7 @@
   <h2>新着</h2>
   <ul>
   <% @notices.each do |notice| %>
-      <li><%= link_to notice.title, notice_path(notice) %></li>
+       <li>更新日時：<%=link_to  notice.created_at.strftime('%Y年%m月%d日 %H:%M'), notice_path(notice) %><br>タイトル：<%= link_to notice.title, notice_path(notice) %></li>
     <% end %>
 </ul>
 

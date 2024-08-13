@@ -48,17 +48,14 @@
   <% end %>
 
   <%# 下部ボタン %>
-    <div class="sell-btn-contents">
-      <%=link_to 'もどる', notices_path, class:"back-btn" %>
-    </div>
+    <p><%= link_to '一覧に戻る', notices_path, class: "p-go-page" %> </p>
     <%# /下部ボタン %>
 
     </div>
   </div>
-  
-  <%# 詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
-  <a href="#" class="another-item">お知らせをもっと見る</a>
-  <%# //詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
+
+  <div class="another-item"><%=link_to 'お知らせをもっと見る', notices_path, class:"another-item" %></div>
+
 </div>
 
 <%= render "shared/footer" %>
