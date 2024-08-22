@@ -32,12 +32,6 @@
     border: 2px solid #000;
   }
   
-  .p-index-container a {
-    color: #000; /* リンクの文字色をピンクにする */
-    text-decoration: none; /* リンクの下線を削除 */
-}
-
-
 .p-index-container-btn {
   display: flex;
   flex-direction: column; /* 縦並びに配置 */

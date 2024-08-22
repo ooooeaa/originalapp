@@ -15,7 +15,7 @@
   align-items: center;
 }
 
-.furima-icon {
+.kanpe-icon {
   width: 10vw;
   margin-right: 10vw;
 }
@@ -85,13 +85,14 @@
   font-weight: bold;
 }
 
-
-.logout {
+.login {
   text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
   color: #333333;
 }
 
-.login {
+.logout {
   text-decoration: none;
   line-height: 32px;
   margin-right: 3vw;
